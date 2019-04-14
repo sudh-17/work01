@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>memory</title>
+</head>
+<body>
+  <script>
+    // 添加数据
+    localStorage.setItem('user', '张三丰')
+    localStorage.setItem('address', '南油大酒店')
+    print()
+    // 获取数据
+    let user = ''
+    let address = ''
+    user = localStorage.getItem('user')
+    address = localStorage.getItem('address')
+    console.log(user, address)
+    
+    // 删除user
+    localStorage.removeItem('user')
+    user = localStorage.getItem('user')
+    address = localStorage.getItem('address')
+    print()
+
+    // 清除localstorage
+    localStorage.clear()
+    user = localStorage.getItem('user')
+    address = localStorage.getItem('address')
+    print()
+
+    function print() {
+      for (let i = 0; i < localStorage.length; i ++) {
+        console.log(localStorage.getItem(localStorage.key(i)))
+      }
+    }
+  </script>
+</body>
+</html>
